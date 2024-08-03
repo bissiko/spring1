@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns::="https://www.thymeleaf.org">
+<head>
+    <title>Tasks</title>
+    <meta content = "charset=UTF-8; text/html" http-equiv="Content-Type">
+    <meta >
+    <link href="/style/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="/script/jq.js"></script>
+    <script type="text/javascript" src="/script/bootstrap.js"></script>
+
+</head>
+<body>
+<h1>Tasks</h1>
+    <table class="table table-bordered table-sm table-striped">
+        <thead class="bg-info text-center">
+            <tr>
+                <th>Id 7</th>
+                <th>Description</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr th:each="task, number : ${tasks}" class="bg-light text-center">
+            <td th:text="${task.id}"></td>
+            <td th:text="${task.description}" th:id="'description_' + ${task.id}"></td>
+            <td th:text="${task.status}" th:id="'status_' + ${task.id}"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
